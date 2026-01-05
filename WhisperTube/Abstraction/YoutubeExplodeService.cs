@@ -1,8 +1,8 @@
-using videoToMarkdown.Models;
+using WhisperTube.Models;
 using YoutubeExplode;
 using YoutubeExplode.Videos.Streams;
 
-namespace videoToMarkdown.Abstraction;
+namespace WhisperTube.Abstraction;
 
 public class YoutubeExplodeService : IYoutubeService
 {

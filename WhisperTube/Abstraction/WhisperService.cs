@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Whisper.net;
 using Whisper.net.Ggml;
 
-namespace videoToMarkdown.Abstraction;
+namespace WhisperTube.Abstraction;
 
 public class WhisperService
 {

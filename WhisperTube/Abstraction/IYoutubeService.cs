@@ -1,7 +1,7 @@
-using videoToMarkdown.Models;
+using WhisperTube.Models;
 
 
-namespace videoToMarkdown.Abstraction;
+namespace WhisperTube.Abstraction;
 
 public interface IYoutubeService
 {

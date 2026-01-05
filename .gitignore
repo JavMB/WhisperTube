@@ -4,3 +4,19 @@ obj/
 riderModule.iml
 /_ReSharper.Caches/
 /WhisperCPPWithCSharp
+
+# Whisper model
+*.bin
+
+# Audio files
+*.wav
+*.webm
+
+# Transcription output
+transcripcion.txt
+
+# IDE files
+.DS_Store
+.idea/
+*.user
+.DotSettings.user

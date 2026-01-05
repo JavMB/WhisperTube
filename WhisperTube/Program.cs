@@ -1,5 +1,5 @@
 using System.CommandLine;
-using videoToMarkdown.Abstraction;
+using WhisperTube.Abstraction;
 
 var youtubeService = new YoutubeExplodeService();
 var audioConverter = new FfmpegAudioConverter();

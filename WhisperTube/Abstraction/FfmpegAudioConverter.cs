@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace videoToMarkdown.Abstraction;
+namespace WhisperTube.Abstraction;
 
 public class FfmpegAudioConverter
 {

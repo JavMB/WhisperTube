@@ -1,4 +1,4 @@
-# videoToMarkdown
+# WhisperTube
 
 CLI tool for downloading YouTube videos and transcribing them to text using Whisper.
 
@@ -21,7 +21,7 @@ CLI tool for downloading YouTube videos and transcribing them to text using Whis
 
 ```bash
 git clone <repo-url>
-cd videoToMarkdown
+cd WhisperTube
 dotnet restore
 ```
 
@@ -35,14 +35,14 @@ dotnet run -- --url <youtube_video_url>
 
 ```bash
 dotnet publish -c Release -r <runtime> --self-contained
-./bin/Release/net10.0/<runtime>/publish/videoToMarkdown --url <youtube_video_url>
+./bin/Release/net10.0/<runtime>/publish/WhisperTube --url <youtube_video_url>
 ```
 
 ### Create shell alias (optional)
 
 Add to `~/.bashrc` or `~/.zshrc`:
 ```bash
-alias transcribir='dotnet run --project /path/to/videoToMarkdown --'
+alias transcribir='dotnet run --project /path/to/WhisperTube --'
 ```
 
 Then use:
