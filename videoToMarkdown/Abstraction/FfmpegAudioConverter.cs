@@ -12,14 +12,21 @@ public class FfmpegAudioConverter
             StartInfo = new ProcessStartInfo
             {
                 FileName = "ffmpeg",
-                Arguments = $"-i \"{inputPath}\" \"{outputPath}\"",
+                Arguments = $"-i \"{inputPath}\" -ar 16000 -ac 1 \"{outputPath}\"",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
-                UseShellExecute = false
+                UseShellExecute = false,
+                CreateNoWindow = true
             }
         };
+        
         process.Start();
+        
+        var errorTask = process.StandardError.ReadToEndAsync(cancellationToken);
+        
         await process.WaitForExitAsync(cancellationToken);
+        
+        await errorTask;
 
         if (process.ExitCode != 0)
         {
