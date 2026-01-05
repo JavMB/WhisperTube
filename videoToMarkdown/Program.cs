@@ -3,6 +3,7 @@ using videoToMarkdown.Abstraction;
 
 var youtubeService = new YoutubeExplodeService();
 var audioConverter = new FfmpegAudioConverter();
+var whisperService = new WhisperService();
 
 var urlOption = new Option<string>("--url")
 {
@@ -52,6 +53,13 @@ rootCommand.SetAction(parseResult =>
 
         Console.WriteLine($"✓ Converión completada");
         Console.WriteLine($"Tamaño del archivo WAV: {new FileInfo(wavPath).Length:N0} bytes");
+
+        var txtPath = Path.Combine(Directory.GetCurrentDirectory(), "transcripcion.txt");
+        Console.WriteLine($"Transcribiendo audio a texto: {txtPath}");
+
+        whisperService.TranscribeToTextAsync(wavPath, txtPath).GetAwaiter().GetResult();
+
+        Console.WriteLine($"✓ Transcripción completada: {txtPath}");
     }
     catch (Exception ex)
     {
