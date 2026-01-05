@@ -22,7 +22,7 @@ public class WhisperService
         using var whisperFactory = WhisperFactory.FromPath(_modelFileName);
 
         await using var processor = whisperFactory.CreateBuilder()
-            .WithLanguage("es")
+            .WithLanguage("auto")
             .Build();
 
         await using var fileStream = File.OpenRead(wavFilePath);
